@@ -1,0 +1,47 @@
+.header{
+	background: #1A7FA1;
+	height: 130px;
+	margin: auto;
+}
+
+.footer{
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	background: #1A7FA1;
+} 
+
+.navbar .navbar-brand {
+	font-size: 2rem;
+}
+
+#menu {
+	color: white;
+}
+
+.header .navbar{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.footer .navbar{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.navbar .container {
+	padding-left: 0%;
+}
+
+a[class = "nav-link"], a[class = "nav-link dropdown-toggle"] {
+	color: white !important;
+}
+
+li[class="nav-item"]:hover, li[class = "nav-item dropdown"]:hover, li[class = "dropdown-item"]:hover {
+	background: #1A7FA1;
+	transition: all 0.4s;
+}
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+	background: #343a40 !important;
+}

@@ -1,0 +1,41 @@
+create table userLogin(Username varchar(40), Password varchar(20), role varchar(20));
+
+mysql> describe userLogin;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| Username | varchar(40) | YES  |     | NULL    |       |
+| Password | varchar(20) | YES  |     | NULL    |       |
+| role     | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table Customers(Customer_Id int auto_increment, Customer_ssnId int, Customer_name varchar(50), Customer_age int, Customer_address varchar(100), Customer_state varchar(50), Customer_city varchar(50), primary key(Customer_Id), unique(Customer_ssnId));
+
+mysql> describe customers;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| Customer_Id      | int          | NO   | PRI | NULL    | auto_increment |
+| Customer_ssnId   | int          | YES  | UNI | NULL    |                |
+| Customer_name    | varchar(50)  | YES  |     | NULL    |                |
+| Customer_age     | int          | YES  |     | NULL    |                |
+| Customer_address | varchar(100) | YES  |     | NULL    |                |
+| Customer_state   | varchar(50)  | YES  |     | NULL    |                |
+| Customer_city    | varchar(50)  | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+7 rows in set (1.20 sec)
+
+mysql> create table CustomerStatus(id int auto_increment, Customer_ssnId int, Status varchar(10), Message varchar(70), LastUpdated datetime, primary key (id), foreign key(Customer_ssnId) references Customers(Customer_ssnId));
+
+mysql> describe customerStatus;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| id             | int         | NO   | PRI | NULL    | auto_increment |
+| Customer_ssnId | int         | YES  | MUL | NULL    |                |
+| Status         | varchar(10) | YES  |     | NULL    |                |
+| Message        | varchar(70) | YES  |     | NULL    |                |
+| LastUpdated    | datetime    | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+5 rows in set (1.04 sec)
